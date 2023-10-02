@@ -1,0 +1,71 @@
+:root {
+
+	--accent: #678273;
+	--accent-dark: #495C51;
+	--black: 15, 18, 25;
+	--gray: 96, 115, 159;
+	--gray-light: 229, 233, 240;
+	--gray-dark: 34, 41, 57;
+	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+		0 16px 32px rgba(var(--gray), 33%);
+}
+
+
+
+a:hover {
+	opacity: 0.8;
+}
+
+
+
+
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+code {
+	padding: 2px 5px;
+	background-color: rgb(var(--gray-light));
+	border-radius: 2px;
+}
+
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+
+@media screen and (min-width: 700px) {
+	pre {
+		width: 110%;
+		position: relative;
+		left: -5%;
+	}
+}
+
+pre>code {
+	all: unset;
+}
+
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0;
+	font-size: 1.333em;
+}
+
+.layout{
+	animation: fade 0.6s;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

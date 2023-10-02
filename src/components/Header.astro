@@ -1,0 +1,116 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/Logo.png";
+import HamBurger from "./HamBurger.astro";
+---
+
+<header
+  class="text-gray-600 body-font shadow-sm mb-8 sticky w-full top-0 z-10 p-5 bg-white"
+>
+  <div class="toggle-screen hidden md:block">
+    <div
+      class="flex container mx-auto flex-wrap p-3 flex-col md:flex-row items-center"
+    >
+      <a
+        href="/"
+        class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+      >
+        <Image src={Logo} alt="it-meet" class="w-28 px-3" />
+      </a>
+      <nav
+        class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center gap-4"
+      >
+        <a href="/">Explore</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+      <button
+        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+        >Visit
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          class="w-4 h-4 ml-1"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="ham cursor-pointer absolute top-3 right-3">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</header>
+
+<style></style>
+
+<script>
+  // Toggle Screen for mobile view
+
+  const toggleScreen = document.querySelector(".toggle-screen");
+  const hamBurger = document.querySelector(".ham");
+
+  hamBurger.addEventListener("click", () => {
+    hamBurger?.classList.toggle("change");
+    toggleScreen.classList.toggle("hidden");
+  });
+
+  // window.addEventListener("resize", () => {
+  //   if (window.innerWidth > 768) {
+  //     hamBurger?.classList.remove("change");
+  //   }
+  // });
+</script>
+
+<style>
+   .ham {
+    display: none;
+    cursor: pointer;
+  }
+
+  .ham div {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ham {
+      display: block;
+      cursor: pointer;
+    }
+    .toggle-screen {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  }
+
+  .change .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .change .line2 {
+    opacity: 0;
+  }
+
+  .change .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

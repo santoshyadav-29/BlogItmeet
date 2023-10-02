@@ -1,0 +1,44 @@
+---
+import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ViewTransitions />
+  </head>
+  <body class=" flex flex-col min-h-screen">
+    <Header />
+    
+
+    <main class="flex-grow layout ">
+      <div
+        class="  container mx-auto text-center  text-gray-800 flex flex-col gap-2 sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-[70ch]"
+      >
+        <h1 class="text-2xl font-bold">
+          About IT MEET 2023
+          <hr class="w-1/2 mx-auto border-t-2 border-black" />
+        </h1>
+        <h2 class="text-xl text-gray-700 font-semibold">
+          Welcome to one of the Greatest IT Events of Nepal
+        </h2>
+        <p>
+          IT MEET is an annual tech festival organized by Kathmandu University
+          Computer Club (KUCC) with the aim of bringing together students from
+          different colleges and universities all over Nepal and providing them
+          a platform to share knowledge and skills and compete with each other
+          in various fields of IT. The event is organized in Kathmandu
+          University, Dhulikhel, Nepal.
+        </p>
+      </div>
+    </main>
+    <Footer/>
+  </body>
+</html>

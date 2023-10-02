@@ -1,0 +1,24 @@
+---
+import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ViewTransitions />
+  </head>
+  <body class=" flex flex-col min-h-screen">
+    <Header />
+
+    <main class="flex-grow layout">
+     
+    </main>
+    <Footer/>
+  </body>
+</html>

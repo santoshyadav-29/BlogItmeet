@@ -1,16 +1,74 @@
 ---
+import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen flex flex-col flex-grow">
+    <Header />
+
+    <main class="layout max-w-xl sm:px-0 px-6 mx-auto w-full min-h-screen">
+      <ul class="space-y-12">
+        {
+          posts.map((post) => (
+            <li class="group flex flex-col gap-y-4 text-center sm:text-left gap-x-4">
+              <a href={`/${post.slug}/`} class="hidden sm:inline">
+                <h2 class="font-bold text-2xl sm:text-3xl text-gray-800 group-hover:text-primary-400 transition-colors">
+                  {post.data.title}
+                </h2>
+              </a>
+              <div class="flex flex-col sm:flex-row gap-y-4 gap-x-4">
+                <a href={`/${post.slug}/`} class="sm:w-1/4 w-3/4 mx-auto">
+                  <Image
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    width={400}
+                    height={225}
+                    loading="lazy"
+                    transition:name={post.slug}
+                    class="shadow-md shadow-primary-400 rounded-lg aspect-video"
+                  />
+                </a>
+                <div class="sm:w-3/4 flex flex-col gap-y-2">
+                  <a href={`/${post.slug}/`} class="sm:hidden">
+                    <h2 class="font-bold text-2xl sm:text-3xl text-primary-500 group-hover:text-primary-400 transition-colors">
+                      {post.data.title}
+                    </h2>
+                  </a>
+                  <aside class="flex gap-x-2 text-sm justify-center sm:justify-start">
+                    <FormattedDate date={post.data.pubDate} />
+                    &bullet;
+                    <div class="whitespace-nowrap">
+                      ☕{" "}
+                      {post
+                        .render()
+                        .then((p) => p.remarkPluginFrontmatter?.minutesRead)}
+                    </div>
+                  </aside>
+                  <div class="text-base">{post.data.description}</div>
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+    <Footer />
+  </body>
 </html>
