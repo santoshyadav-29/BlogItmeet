@@ -11,15 +11,9 @@
 		0 16px 32px rgba(var(--gray), 33%);
 }
 
-
-
 a:hover {
 	opacity: 0.8;
 }
-
-
-
-
 
 img {
 	max-width: 100%;
@@ -55,17 +49,4 @@ blockquote {
 	padding: 0 0 0 20px;
 	margin: 0;
 	font-size: 1.333em;
-}
-
-.layout{
-	animation: fade 0.6s;
-}
-
-@keyframes fade {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
 }
