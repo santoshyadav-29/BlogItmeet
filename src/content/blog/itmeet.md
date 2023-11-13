@@ -3,7 +3,7 @@ title: 'Top It Events Of Nepal'
 description: '
 The IT MEET is an annual tech event organized by Kathmandu University'
 pubDate: 'Oct 02 2023'
-heroImage: '../../assets/thumbnails/Blockchain.jpg'
+heroImage: '../../assets/thumbnails/Top it meet.png'
 ---
 
 <!-- **TOP IT EVENTS OF NEPAL** -->
