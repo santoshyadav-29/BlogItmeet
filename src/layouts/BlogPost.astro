@@ -1,14 +1,14 @@
 ---
 import {Image} from "astro:assets";
 import {ViewTransitions} from 'astro:transitions';
-import type {CollectionEntry} from 'astro:content';
+// import type {CollectionEntry} from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 
-type Props = CollectionEntry<'thumbnails'>['data'];
+type BlogPostType = "blog";
 
 const {title, description, pubDate, heroImage, readingTime, slug} = Astro.props;
 ---
@@ -39,7 +39,7 @@ const {title, description, pubDate, heroImage, readingTime, slug} = Astro.props;
                 <aside class="flex gap-x-2 text-base justify-center sm:justify-start">
                     <FormattedDate date={pubDate}/>
                     &bullet;
-                    <div class="whitespace-nowrap">☕ {readingTime?.minutesRead}</div>
+                    <div class="whitespace-nowrap">☕ </div>
                 </aside>
             </div>
             <hr class="my-12"/>
