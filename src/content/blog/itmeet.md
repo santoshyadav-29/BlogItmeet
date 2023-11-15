@@ -7,12 +7,12 @@ heroImage: '../../assets/thumbnails/Top it meet.png'
 ---
 
 <!-- **TOP IT EVENTS OF NEPAL** -->
+Nepal might not be the first place when it comes to technological advancement. Over the past few years, Nepal has witnessed a huge leap in technological innovation and advancement, marked by numerous IT events that have not only showcased local talent but also connected the nation to global reach. Let’s find out the top annual IT events that are contributing to Nepal's journey towards becoming a tech-savvy nation.
+<br/>
+<br/>
 
-**TOP IT EVENTS OF NEPAL**
-
-**N**epal might not be the first place when it comes to technological advancement. Over the past few years, Nepal has witnessed a huge leap in technological innovation and advancement, marked by numerous IT events that have not only showcased local talent but also connected the nation to global reach. Let’s find out the top annual IT events that are contributing to Nepal's journey towards becoming a tech-savvy nation.
-
-**1.KU IT MEET**.
+<!-- **1.KU IT MEET**. -->
+## KU IT MEET
 
 The IT MEET is an annual tech event organized by Kathmandu University that stands epitome of innovation in Nepal’s IT field.It is a platform for students, IT professionals, and technology enthusiasts to come together to discuss and explore various aspects of information technology. This event offers a dynamic blend of both tech and non-tech events from hackfest to valorent tournaments.Student teams often showcase their IT projects and innovations to a broader audience.It provides a platform for attendees to connect with like-minded individuals, potential employers, and mentors. Career fair is one of the major highlights which is an excellent opportunity for both job seekers and employers to connect and explore career opportunities in the IT field.You can be a part of IT meet even if you are a person from non tech background as it offers various non-tech programs as well. It usually occurs in December so get ready to  participate and geek out in style.
 
