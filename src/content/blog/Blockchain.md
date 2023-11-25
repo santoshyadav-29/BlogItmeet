@@ -1,7 +1,6 @@
 ---
 title: 'Blockchain'
-description: '
-Blockchain is a distributed ledger technology that maintains a continuously growing list of records.'
+description: 'Blockchain is a distributed ledger technology that maintains a continuously growing list of records.'
 pubDate: 'Aug 06 2023'
 heroImage: '../../assets/thumbnails/Blockchain.jpg'
 ---
